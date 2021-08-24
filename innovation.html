@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+
+<head>
+  <script
+    type="text/javascript">window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam.nr-data.net", "errorBeacon": "bam.nr-data.net", "licenseKey": "30b484a957", "applicationID": "51901936", "transactionName": "Il4KRktdWlgAQklfVg9eElNNW1laFh8VXlcW", "queueTime": 0, "applicationTime": 203, "agent": "" }</script>
+  <script
+    type="text/javascript">(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "30b484a957", applicationID: "51901936" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[n]) { var i = e[n] = { exports: {} }; t[n][0].call(i.exports, function (e) { var i = t[n][1][e]; return r(i || e) }, i, i.exports) } return e[n].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[i]); return r }({ 1: [function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [u.now()].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[e] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [u.now(), t, n], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [u.now(), r, i], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [arguments, this, t], n), t } finally { c.emit("fn-end", [u.now()], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[e] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [t, u.now(), !1, e]) } }, {}], 2: [function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[n[r]], "object" != typeof e) return; return e = e[n[n.length - 1]] } } e.exports = { getConfiguration: r } }, {}], 3: [function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {}], 4: [function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {}], 5: [function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", ["fp", Math.floor(t.startTime)]) : "first-contentful-paint" === t.name && d("timing", ["fcp", Math.floor(t.startTime)]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [n[n.length - 1]]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [t]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", ["fi", e, n]) } } function f(t) { "hidden" === t && d("pageHide", [p.now()]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: ["paint"] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: ["largest-contentful-paint"] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = ["click", "keydown", "mousedown", "pointerdown", "touchstart"]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {}], 6: [function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[a] !== n[a]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[1]) } e.exports = { agent: i, version: o, match: r } }, {}], 7: [function (t, e, n) { function r(t) { function e() { t(a && document[a] ? document[a] : document[i] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {}], 8: [function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[o] = e(r, t[r]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {}], 9: [function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[r] = t[e + r]; return o } e.exports = r }, {}], 10: [function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {}], ee: [function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[s].apply(f, r); var p = d[w[n]]; return p && p.push([b, n, r, f]), f } } function o(t, e) { y[t] = v(t).concat(e) } function m(t, e) { var n = y[t]; if (n) for (var r = 0; r < n.length; r++)n[r] === e && n.splice(r, 1) } function v(t) { return y[t] || [] } function g(t) { return p[t] = p[t] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[n] = e, e in d || (d[e] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {}], gos: [function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[e]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[e] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {}], handle: [function (t, e, n) { function r(t, e, n, r) { i.buffer([t], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {}], id: [function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {}], loader: [function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[0]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[e] || (t[e] = n) }); var n = a(); f("mark", ["onload", n + M.offset], null, "api"), f("timing", ["load", n]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", ["domContent", a() + M.offset], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[g] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[g] ? (v[g]("DOMContentLoaded", o, !1), m[g]("load", r, !1)) : (v[h]("onreadystatechange", i), m[h]("onload", r)), f("mark", ["firstbyte", a.getLastTimestamp()], null, "api"); var R = 0 } }, {}], "wrap-function": [function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([l, "", [o, a, c], s], t) } f(n + "start", [o, a, c], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [o, a, m], s, u), m } finally { f(n + "end", [o, a, p], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[p] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[u], f = t[c], a(f) || (t[c] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([c, n, r, o], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[n] }, set: function (e) { return t[n] = e, e } }) }), e } catch (o) { i([o], n) } for (var a in t) l.call(t, a) && (e[a] = t[a]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[p]) } function f(t, e) { var n = e(t); return n[p] = t, o(t, n, s), n } function c(t, e, n) { var r = t[e]; t[e] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[n] = arguments[n]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {}] }, {}, ["loader"]);</script>
+  <title>VisionSpring</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <meta content="GIE" property="og:site_name">
+  </meta>
+  <meta content="website" property="og:type">
+  </meta>
+  <meta content="https://www.globalinnovationexchange.org/innovation/visionspring" property="og:url">
+  </meta>
+  <meta content="VisionSpring" property="og:title">
+  </meta>
+  <meta content="Our mission is to create affordable access to eyewear, everywhere. 
+2.5 billion people would be able to earn, learn and be safe, if they could acquire a pair
+of simple eyeglasses to see clearly. Of these, 624 million are visually impaired without this
+700-year-old technology, and 70% just need a pair of over-the-counter reading glasses.
+VisionSpring can source these for as little as $1 and deliver to those living on less than $5/day. 
+To date, our efforts here have lead to $1.2B in economic impact at the household level." property="og:description">
+  </meta>
+  <meta content="Our mission is to create affordable access to eyewear, everywhere. 
+2.5 billion people would be able to earn, learn and be safe, if they could acquire a pair
+of simple eyeglasses to see clearly. Of these, 624 million are visually impaired without this
+700-year-old technology, and 70% just need a pair of over-the-counter reading glasses.
+VisionSpring can source these for as little as $1 and deliver to those living on less than $5/day. 
+To date, our efforts here have lead to $1.2B in economic impact at the household level." property="description">
+  </meta>
+  <meta content="summary_large_image" property="twitter:card">
+  </meta>
+  <meta content="VisionSpring" property="twitter:title">
+  </meta>
+  <meta content="Our mission is to create affordable access to eyewear, everywhere. 
+2.5 billion people would be able to earn, learn and be safe, if they could acquire a pair
+of simple eyeglasses to see clearly. Of these, 624 million are visually impaired without this
+700-year-old technology, and 70% just need a pair of over-the-counter reading glasses.
+VisionSpring can source these for as little as $1 and deliver to those living on less than $5/day. 
+To date, our efforts here have lead to $1.2B in economic impact at the household level."
+    property="twitter:description">
+  </meta>
+  <meta content="1918040368409010" property="fb:app_id">
+  </meta>
+  <meta content="uploads/1559587334-3a6dccd0685d013713a80e6489633e00/See-to-Earn2-orientation-1.jpg"
+    property="og:image">
+  </meta>
+  <meta content="uploads/1559587334-3a6dccd0685d013713a80e6489633e00/See-to-Earn2-orientation-1.jpg"
+    property="twitter:image">
+  </meta>
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token"
+    content="Bh05xb/hC8K8fv9gLnjMLk5W81LDXvrm4aCiKod+cqYRs9nGTaKk878R6PG4i0XK7V84xkGjqBCbx6jKuzx4Iw==" />
+  <link rel="stylesheet" media="all"
+    href="/assets/application-afb0df2158360c0843039757553277430e42558244a763b34a43091c2018d85f.css"
+    data-turbolinks-track="reload" />
+  <script src="/assets/application-8d7d92ba5f98335b9132b7d49e81e3992a7bf37ee0bc7ef5494b49495276204c.js"
+    data-turbolinks-track="reload"></script>
+  <script src="/packs/application-5a082909eae9d329fbba.js" data-turbolinks-track="reload"></script>
+  <script src="/packs/panel-479a8bc4544d41894c3a.js" data-turbolinks-track="reload"></script>
+  <script src="/assets/cocoon-4a0df703686ddcd145122af2c24da539b19c286f3ab34f8b6703bf52db8d338d.js"></script>
+  <link rel="stylesheet" media="screen"
+    href="./file2.css"
+    data-turbolinks-track="reload" />
+  <meta
+    content="https://www.globalinnovationexchange.org/assets/wysihtml5-162795c873ac7b6537a34bd73dd1f1e2026ecde5c7745354c1c35445ad9688f1.css"
+    name="wysihtml5-css-url" />
+  <script>var google_tag_manager_id = "GTM-KCMJPFP";
+
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', google_tag_manager_id);
+
+    $.trumbowyg.svgPath = "/assets/icons-fe098badb0ac3dc18a018270acbf50d316d737cf67a8fb6e9d7bc130edac72b4.svg";</script>
+  <link rel="stylesheet" type="text/css"
+    href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#dde0e4",
+            "text": "#000000"
+          },
+          "button": {
+            "background": "#ffffff",
+            "text": "#000000"
+          }
+        },
+        "location": true,
+        "theme": "edgeless",
+        "content": {
+          "message": "Global Innovation Exchange uses cookies to analyze traffic and offer a better experience. By continuing to use our site you accept this.",
+          "dismiss": "Got It",
+          "href": "https://sites.google.com/globalinnovationexchange.org/gie-privacy-policy/home"
+        }
+      })
+    });
+  </script>
+</head>
+
+<body class="innovations innovations-show" data-client-type="" data-microsite-url="" id="innovations-show">
+  <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KCMJPFP"
+      style="display:none;visibility:hidden" width="0"></iframe></noscript>
+  <div class="wrapper-container">
+    <nav class="navbar navbar-default microsite-navbar">
+      <div class="global-banner">GLOBAL INNOVATION EXCHANGE WILL SUNSET IN LATE AUGUST. ACCOUNT SIGNUP AND LOGIN HAVE
+        BEEN DISABLED AS PART OF THIS PROCESS. READ THE&nbsp;<a target="_blank"
+          href="https://r4d.org/news/gie-sunsets/">ANNOUNCEMENT</a>&nbsp;TO LEARN MORE.</div>
+      <div class="container-fluid">
+        <div class="navbar-header"><button aria-expanded="false" class="nav-toggle-icon" data-target=".navbar-collapse"
+            data-toggle="collapse" type="button"><span></span><span></span><span></span><span></span></button><a
+            class="navbar-brand" href="/"><img
+              src="/assets/gie-logo-0908bcad55e5147a4f4d2af945b13ceaec51d30ee5122ecf9c92db157b945eb2.png" /></a></div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right false">
+            <li><a href="/free-resource-for-social-entrepreneurs"><span class="full-name">For Social
+                  Entrepreneurs</span></a></li>
+            <li class="dropdown parent-menu"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                data-toggle="dropdown" href="javascript: void(0)" role="button"><span class="full-name">Our Data<i
+                    class="icon-arrow-down"></i></span><i class="icon-arrow-right"></i></a>
+              <div class="navbar-brand back">BACK</div>
+              <ul class="dropdown-menu user-dropdown">
+                <li class="innovations-list"><a class="subtitle" href="/global-development-innovation-data">Data on
+                    Global Innovation Exchange </a></li>
+                <li class="innovations-list"><a class="subtitle" href="/our-data-champions">Our Data Champions</a></li>
+              </ul>
+            </li>
+            <li class="dropdown parent-menu"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                data-toggle="dropdown" href="javascript: void(0)" role="button"><span class="full-name">Browse GIE<i
+                    class="icon-arrow-down"></i></span><i class="icon-arrow-right"></i></a>
+              <div class="navbar-brand back">BACK</div>
+              <ul class="dropdown-menu user-dropdown">
+                <li class="innovations-list"><a class="subtitle" href="/browse/funders">Funders</a></li>
+                <li class="innovations-list"><a class="subtitle" href="/browse/funding">Funding</a></li>
+                <li class="innovations-list"><a class="subtitle" href="/browse/innovation">Innovations</a></li>
+              </ul>
+            </li>
+            <li class="dropdown parent-menu"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                data-toggle="dropdown" href="javascript: void(0)" role="button"><span class="full-name">About<i
+                    class="icon-arrow-down"></i></span><i class="icon-arrow-right"></i></a>
+              <div class="navbar-brand back">BACK</div>
+              <ul class="dropdown-menu user-dropdown">
+                <li class="innovations-list"><a class="subtitle" href="/about">About Global Innovation Exchange</a></li>
+                <li class="innovations-list"><a class="subtitle"
+                    href="/global-innovation-exchange-news-and-announcements">News &amp; Blogs</a></li>
+                <li class="innovations-list"><a class="subtitle" href="/success-story">Who Is Using GIE</a></li>
+              </ul>
+            </li>
+            <li class="dropdown parent-menu"><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                data-toggle="dropdown" href="javascript: void(0)" role="button"><span class="full-name">GIE Custom
+                  Sites<i class="icon-arrow-down"></i></span><i class="icon-arrow-right"></i></a>
+              <div class="navbar-brand back">BACK</div>
+              <ul class="dropdown-menu user-dropdown">
+                <li class="innovations-list"><a class="subtitle" href="http://bettertogetherve.org/">BetterTogether
+                    Challenge</a></li>
+                <li class="innovations-list"><a class="subtitle" href="https://competitions4dev.org/">Competitions for
+                    Development</a></li>
+                <li class="innovations-list"><a class="subtitle" href="https://covid19innovationhub.org/">COVID-19
+                    Innovation Hub</a></li>
+                <li class="innovations-list"><a class="subtitle" href="https://divportfolio.org/">Development Innovation
+                    Ventures (DIV)</a></li>
+                <li class="innovations-list"><a class="subtitle"
+                    href="http://feedthefuture.globalinnovationexchange.org/">Feed the Future Innovation Exchange</a>
+                </li>
+                <li class="innovations-list"><a class="subtitle" href="https://millionlivesclub.org/">Million Lives
+                    Club</a></li>
+                <li class="innovations-list"><a class="subtitle" href="https://www.solutions-summit.org/">Solutions
+                    Summit</a></li>
+                <li class="innovations-list"><a class="subtitle"
+                    href="http://stiforum4sdgs.globalinnovationexchange.org/">United Nation&#39;s STI Forum</a></li>
+                <li class="innovations-list"><a class="subtitle" href="https://www.digitaldevelopment.org/">USAID&#39;s
+                    Center for Digital Development</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script>$(window).scroll(function () {
+        var windowTop = $(window).scrollTop();
+        if (windowTop > 96) {
+          $('.microsite-navbar .navbar-header').addClass('header-sticky-top');
+          $('.microsite-navbar').addClass('sticky-navbar');
+        }
+        else {
+          $('.microsite-navbar .navbar-header').removeClass('header-sticky-top');
+          $('.microsite-navbar').removeClass('sticky-navbar');
+        }
+        // console.log(windowTop)
+      });</script>
+    <div class="content-wrapper" style="">
+      <div class="share-btns"></div>
+      <div class="info-wrapper">
+        <div class="inno-info item">
+          <p class="date">Updated Jul 21, 2021</p>
+          <div class="detail-info flx">
+            <div class="left"><img class="logo_img"
+                src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571678551-4968a810d6550137154c0e6489633e00/110808-warbyparker-386-orientation-undefined.jpg" />
+            </div>
+            <div class="right">
+              <h3 class="tt font-bold">VisionSpring</h3>
+              <p class="desc"></p><a class="link" href="http://visionspring.org/"
+                target="_blank">http://visionspring.org/</a>
+              <div class="social_links"><a href="https://twitter.com/VisionSpring" target="_blank"><span
+                    class="icon-twitter"></span></a><a href="https://www.facebook.com/visionspring/"
+                  target="_blank"><span class="icon-facebook"></span></a><a
+                  href="https://www.linkedin.com/company/visionspring" target="_blank"><span
+                    class="icon-linkedin"></span></a><a href="https://www.instagram.com/visionspringinc/"
+                  target="_blank"><span class="icon-instagram"></span></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="inno-poc item">
+          <div class="director-avatar"><img width="80px"
+              data-fallback-url="https://www.globalinnovationexchange.org/assets/default-avatar-81a5fe864b87c946abd83d90a399fa48ba1c256f4503882b21052cdcb20712dc.png"
+              onerror="imageFallback(this)"
+              src="/assets/default-avatar-81a5fe864b87c946abd83d90a399fa48ba1c256f4503882b21052cdcb20712dc.png" /></div>
+          <div class="director-info">
+            <p class="name">Kristen Shaw</p>
+            <p class="desc"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="details">
+        <div class="detail-bd">
+          <h4 class="desc">Our mission is to create affordable access to eyewear, everywhere.
+            2.5 billion people would be able to earn, learn and be safe, if they could acquire a pair
+            of simple eyeglasses to see clearly. Of these, 624 million are visually impaired without this
+            700-year-old technology, and 70% just need a pair of over-the-counter reading glasses.
+            VisionSpring can source these for as little as $1 and deliver to those living on less than $5/day.
+            To date, our efforts here have lead to $1.2B in economic impact at the household level.</h4>
+        </div>
+        <div class="detail-bd">
+          <div class="content text-left">
+            <div class="innovation_desc inline">Several complementary organizations work to bring eye health services
+              and glasses to poor people across emerging and frontier markets including, but not limited to, the Brien
+              Holden Vision Institute, OneSight, and Vision for a Nation. VisionSpring distinguishes itself, however, by
+              its social enterprise model. As such, social change motivates us first. We treat poor and low-income
+              individuals as...</div><a class="see-more ml5">SEE ALL</a>
+          </div>
+          <div class="content text-left hide">
+            <div class="innovation_desc inline">Several complementary organizations work to bring eye health services
+              and glasses to poor people across emerging and frontier markets including, but not limited to, the Brien
+              Holden Vision Institute, OneSight, and Vision for a Nation. VisionSpring distinguishes itself, however, by
+              its social enterprise model. As such, social change motivates us first. We treat poor and low-income
+              individuals as consumers rather than beneficiaries. We create access to eyeglasses for them by selling our
+              eyewear for the equivalent of one to two days' wages. By doing so, we can serve four times as many people
+              living in poverty per dollar input than the next alternative of donating recycled ones. What's more, we
+              awaken new demand and seed a viable market.
+
+              As a social enterprise, we break out of traditional health and optical store channels and bring eyeglasses
+              to the places where low-income individuals work and study. In India, we conduct vision camps in rural
+              communities, slum neighborhoods, factories, transit hubs, agricultural estates, schools, places of
+              worship, and other community spaces. We partner with India's leading corporations to implement vision
+              access projects across the country to serve employees and stakeholders and fulfill their CSR requirements.
+              We also partner with leading apparel brands and artisan networks to create Clear Vision Workplaces. These
+              corporations engage VisionSpring to implement their worker well-being programs by providing vision
+              screenings and eyeglasses to their supply chain workers.</div><a class="see-less ml5">SEE LESS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="stage-wrapper">
+        <h4 class="mt0">Stage 4: Transition to Scale</h4>
+      </div>
+      <div class="snapshot-wrapper">
+        <div class="bunch">
+          <div class="piece full-width">
+            <div class="sub-piece left">
+              <div class="registrations"><span class="register-label">Registered</span>&nbsp;<span>in United
+                  States</span><span class="hide">in United States</span></div>
+              <div class="wrapper psr focus-areas"><i class="icon-telescope psa"></i>
+                <p class="tt focus-areas psr">Focus Areas:</p>
+                <p class="content">Economic Growth and Trade, Education<span> and </span>Health</p>
+                <p class="content hide text-left">Economic Growth and Trade, Education<span> and </span>Health<a
+                    class="see-less ml5">SEE LESS</a></p>
+              </div>
+              <div class="wrapper psr"><i class="icon-earth psa"></i>
+                <p class="tt implemented-in psr">Implemented In:</p>
+                <p class="content">Haiti, Costa Rica, Dominican Republic&nbsp;and 35 More<a class="see-more ml5">SEE
+                    ALL</a></p>
+                <p class="content hide text-left">Haiti, Costa Rica, Dominican Republic, Ecuador, Cambodia, Bolivia,
+                  Benin, South Sudan, Nepal, Paraguay, Senegal, El Salvador, Indonesia, South Africa, Ghana, Congo,
+                  Democratic Republic of the, Malawi, Honduras, Kenya, Uganda, Nigeria, Belize, Tanzania, Mozambique,
+                  Morocco, Cameroon, Mexico, Sri Lanka, Burkina Faso, Venezuela, India, Sierra Leone, Bangladesh,
+                  Vanuatu, Zambia, Rwanda, Nicaragua<span> and </span>Mali<a class="see-less ml5">SEE LESS</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bunch-center-box">
+          <div class="bunch metrics_box num_04">
+            <div class="piece">
+              <div class="inner">
+                <div class="num">6,000,000</div>
+                <div class="tt">Lives Impacted to Date</div>
+              </div>
+            </div>
+            <div class="piece">
+              <div class="inner">
+                <div class="num">38</div>
+                <div class="tt">Countries&nbsp;Implemented In</div>
+              </div>
+            </div>
+            <div class="piece">
+              <div class="inner">
+                <div class="num">6,000,000</div>
+                <div class="tt">Customers</div>
+              </div>
+            </div>
+            <div class="piece">
+              <div class="inner">
+                <div class="num">200</div>
+                <div class="tt">Employees</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="verified_fundings">
+        <div class="title"><span class="icon-star-check"></span><strong class="font-bold">Verified Funding</strong>
+        </div>
+        <div class="logos"><img class="logo_img"
+            src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1520304812-7b304a1003170136182f0e6489633e00/Horizontal-RGB-294.png?size=max300" /><img
+            class="logo_img"
+            src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1521683549-9a1216900fa1013618400e6489633e00/skoll-logo.png?size=max300" /><img
+            class="logo_img"
+            src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1538448712-0a425b30a81c013648ba0e6489633e00/Grand-Challenges-Canada-CAFIID-Logo.png?size=max300" /><img
+            class="logo_img"
+            src="https://go.globalinnovationexchange.org/s3_objs/old/MCbrand_Logo_Horizontal_PMS_186_PC.png?size=max300" />
+        </div>
+        <div class="question-mark" data-html="true" data-placement="right" data-toggle="tooltip"
+          data-trigger="hover focus"
+          title="&lt;span class=&#39;icon-star-check&#39;&gt;&lt;/span&gt;&lt;p class=&#39;title&#39;&gt;WHAT IS VERIFIED?&lt;p&gt;&lt;p class=&#39;expain&#39;&gt;Verified information has been reviewed and confirmed for accuracy by Global Innovation Exchange in partnership with the funding organization or other reliable sources.&lt;/p&gt;">
+          ?</div>
+      </div>
+    </div>
+    <div class="gallery-wrapper">
+      <div class="assets psr">
+        <div class="blueimp-gallery blueimp-gallery-carousel" id="blueimp-gallery-carousel">
+          <div class="slides"></div>
+          <h3 class="title"></h3><a class="prev">‹</a><a class="next">›</a><a class="close hidden">×</a><a
+            class="play-pause"></a>
+          <ol class="indicator"></ol>
+        </div>
+        <div class="delineations"><a class="asset-thumbnail ml10 active" data-index="0" href="#"><img alt="test"
+              src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1559587334-3a6dccd0685d013713a80e6489633e00/See-to-Earn2-orientation-1.jpg?size=max300" /></a><a
+            class="asset-thumbnail ml10 " data-index="1" href="#"><img alt="test"
+              src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677325-6f084ee0d6520137154c0e6489633e00/IMG-2237-orientation-undefined.jpeg?size=max300" /></a><a
+            class="asset-thumbnail ml10 " data-index="2" href="#"><img alt="test"
+              src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677382-90d30cf0d6520137154c0e6489633e00/VisionSpring-in-Limuru-34-orientation-undefined.jpg?size=max300" /></a><a
+            class="asset-thumbnail ml10 " data-index="3" href="#"><img alt="test"
+              src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677396-98f5a130d6520137154d0e6489633e00/DSF0258-orientation-1.jpg?size=max300" /></a>
+        </div><input type="hidden" name="assets_data" id="assets_data"
+          value="[{&quot;poster&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1559587334-3a6dccd0685d013713a80e6489633e00/See-to-Earn2-orientation-1.jpg&quot;,&quot;title&quot;:&quot;See-to-Earn2-orientation-1.jpg&quot;,&quot;href&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1559587334-3a6dccd0685d013713a80e6489633e00/See-to-Earn2-orientation-1.jpg&quot;},{&quot;poster&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677325-6f084ee0d6520137154c0e6489633e00/IMG-2237-orientation-undefined.jpeg&quot;,&quot;title&quot;:&quot;IMG-2237-orientation-undefined.jpeg&quot;,&quot;href&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677325-6f084ee0d6520137154c0e6489633e00/IMG-2237-orientation-undefined.jpeg&quot;},{&quot;poster&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677382-90d30cf0d6520137154c0e6489633e00/VisionSpring-in-Limuru-34-orientation-undefined.jpg&quot;,&quot;title&quot;:&quot;VisionSpring-in-Limuru-34-orientation-undefined.jpg&quot;,&quot;href&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677382-90d30cf0d6520137154c0e6489633e00/VisionSpring-in-Limuru-34-orientation-undefined.jpg&quot;},{&quot;poster&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677396-98f5a130d6520137154d0e6489633e00/DSF0258-orientation-1.jpg&quot;,&quot;title&quot;:&quot;DSF0258-orientation-1.jpg&quot;,&quot;href&quot;:&quot;https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571677396-98f5a130d6520137154d0e6489633e00/DSF0258-orientation-1.jpg&quot;}]" />
+      </div><svg class="polygon-header gallery-bg psa" viewBox="0 0 1440 460">
+        <polygon fill="#157881" points="1326,90 0,90 0,0" stroke-width="0" style="opacity:0.5;"></polygon>
+        <polygon fill="#157881" points="540,90 1440,90 1440,0" stroke-width="0" style="opacity:0.5;"></polygon>
+        <polygon fill="#157881" points="0,90 1440,90 0,47" stroke-width="0"></polygon>
+        <polygon fill="#157881" points="0,89 1440,89 1440,402 0,402" stroke-width="0"></polygon>
+        <polygon fill="#157881" points="0,400 1440,400 720,460" stroke-width="0"></polygon>
+        <polygon fill="#157881" points="0,400 720,460 0,460" stroke-width="0" style="opacity:0.5;"></polygon>
+        <polygon fill="#157881" points="720,460 1440,400 1440,460" stroke-width="0" style="opacity:0.5;"></polygon>
+      </svg>
+    </div>
+    <div class="content-wrapper">
+      <div class="pro-sol flx">
+        <div class="left">
+          <h2 class="tt"><span class="translation_missing"
+              title="translation missing: en.innovations.show.problem">Problem</span></h2>
+          <p class="content">Globally 2.5 billion people do not have the glasses they need to work, learn, be safe on
+            roads, and participate in civic life. Lack of clear vision has socio-economic consequences: uncorrected
+            vision costs the global economy more than $200 billion with low-income individuals most affected by this
+            loss. Nevertheless, optical correction rates in low and middle-income countries (LMICs) are as low as 10%.
+          </p>
+        </div>
+        <div class="middle">}</div>
+        <div class="right">
+          <h2 class="tt"><span class="translation_missing"
+              title="translation missing: en.innovations.show.solution">Solution</span></h2>
+          <p class="content">Vision correcting glasses – whether simple readers or prescription glasses – can solve this
+            2.5 billion-person problem.
+            When livelihoods depend on seeing clearly, uncorrected vision can force an otherwise capable person to
+            prematurely stop working. Given that the global population is aging, health strategies that support
+            productive employment and extend working years among older workers are timely.
+
+            Uncorrected vision affects worker livelihoods and income earning potential by inhibiting their ability to:
+
+            • Maintain their productivity and meet production schedules
+            • Meet quality standards and produce defect-free products
+            • Qualify for performance pay and skill upgrades
+            • Pass skills and aptitude testing associated with hiring processes.
+
+            Additionally, a Randomized Trial showed that glasses affect worker productivity. Results showed that
+            providing reading glasses to rural tea pickers in India increased the daily weight of tea picked by over 5
+            kg/day. This represented a 22% average productivity increase: the largest increase in productivity due to a
+            health intervention ever recorded in a trial.
+
+            Blurry vision also:
+            • impedes participation in the mobile economy and financial services
+            • reduces quality of life associated with reading, cooking, child care, and civic engagement
+            • heightens the risk of accidents associated with driving and road safety, as well as other hazards
+
+            Despite the opportunity to have a huge impact on the global economy and the working poor, today’s optical
+            market fails to meet the needs of low-income consumers in emerging markets due to both demand and supply
+            issues. 1.1 billion people over 35 years old have age-related, blurry near vision (presbyopia) which can be
+            safely, effectively, and inexpensively treated with glasses available in US drugstores and which
+            VisionSpring can source for $1. Uncorrected refractive error (URE), a major cause of vision impairment that
+            can cause blindness, requires prescription glasses that VS can source for $3.50.</p>
+        </div>
+      </div>
+      <div class="details">
+        <div class="detail-bd">
+          <h4 class="detail-tt">Target Beneficiaries</h4>
+          <div class="detail-ctt long-ctt">We work to bring vision screening and eyeglasses to all people who are living
+            on less than $4 in lower and middle-income countries and who experience vision loss. While 60% of our
+            eyeglasses sales are of ready-made readers that address age-related presbyopia, with a target population of
+            people aged 35 and above, VisionSpring glasses can be found around the world being worn by people of any
+            age, gender and ethnicity. 20% of our glasses are worn by schoolchildren, 50% of our customers are women and
+            over 50% of our entire customer base received their first-ever pair of glasses from VisionSpring.</div>
+        </div>
+        <h4 class="detail-tt">Mission and Vision</h4>
+        <div class="detail-ctt long-ctt">VisionSpring's Mission is to create access to affordable eyewear, everywhere.
+          VisionSpring's Vision - the Wonder of eyeglasses for everyone.</div>
+        <h4 class="detail-tt">Competitive Advantage</h4>
+        <div class="detail-ctt long-ctt">Our innovation works by employing a high-volume low-margin business model,
+          coupled with philanthropic investments to deliver high-quality, radically affordable and attractive eyeglasses
+          to those earning less than $4 a day across emerging and frontier markets. To reach our target customer we use
+          innovative Business to Business (B2B) and Business to Consumer (B2C) models. To review our distribution
+          channels, click on this link: http://visionspring.org/distribution-channels.
+
+          Like all businesses, we start with our value proposition. In a highly fragmented optical landscape saturated
+          with sub-standard and/or high-cost products, we position ourselves as offering radically affordable, durable,
+          stylish eyeglasses for earners and learners everywhere. Coupled with the product is our service orientation:
+          favorable payment terms; sell-through support; timely, seamless delivery straight from the manufacturer or a
+          local distributor; guaranteed replacement of damaged goods; and consistency in product availability. Our
+          product line currently includes: ready-made readers, optical frames for adults and children, pre-cut
+          prescription lens with matching frames, and UV-rated sunglasses.
+
+          Bringing vision screenings and quality glasses to places where people work will bypass these demand and supply
+          barriers. We partnered with leading brands – Williams-Sonoma, Inc., Target, Levi Strauss, and VF Corp. – to
+          develop the Clear Vision Workplace (CVW) model in their India, Bangladesh, and Vietnam supply chains. Scaling
+          the CVW model ensures that workers will have on-going access to glasses after the intervention.</div>
+        <h4 class="detail-tt">Planned Goals and Milestones</h4>
+        <div class="detail-ctt long-ctt">It is our ambition is to reach a cumulative 10m people by the end of 2021. To
+          achieve this, we must:
+
+          • Reframe eyeglasses as a livelihoods, education and road safety intervention: We are pushing the economic
+          development sector to adopt eyeglasses as a broadly-applicable livelihoods intervention, as well as a
+          contributor to academic outcomes and road safety. When classified as a health intervention, eyeglasses lose
+          the competition for resources relative to deadly and debilitating diseases. Through the lenses of
+          productivity, income, learning, and safety earning, eyeglasses are evidence-based and scalable, with immediate
+          results.
+
+          • Increase awareness, not just among workers, but among brands, employers and finance/labor ministries about
+          uncorrected vision error in their supply chains and workforces: To normalize eyeglasses wearing in industries
+          of strategic importance to frontier and emerging markets – including garment, textile, tea, coffee and other
+          production that particularly require clear near vision and employ &gt;65 million people – we must build broad
+          understanding of the need for and total dearth of eyeglasses.</div>
+      </div>
+    </div>
+    <div class="team content-wrapper text-center mb70">
+      <h2 class="tt">The Team Behind the Innovation</h2>
+      <p class="mt15">Ella Gudwin is CEO of VisionSpring. Under her leadership, VisionSpring has tripled its impact and
+        the global team that is tracking to sell 10 million pairs of radically affordable eyeglasses in emerging and
+        frontier markets, creating $2.16 billion in increased earning potential at the household level.
+
+        Before joining VisionSpring in 2015, Ella was senior vice president of strategy and program development at the
+        global health organization AmeriCares. In prior roles, Ella led humanitarian operations as vice president of
+        emergency response and managed access to medicine and health care capacity building programs in ten countries as
+        director of Asia and Eurasia partnerships. Earlier in her career, Ella served as the head of Foreign Government
+        Relations at the Population Council, focused on reproductive health, youth, and poverty. Her passions for social
+        justice and economic development issues took root in Indonesia during the Asian financial crisis and the ensuing
+        people power revolution.
+
+        In addition to Ella, the VisionSpring team includes staff at the field level from countries where we operate.
+      </p>
+      <div class="icons mt30"><img width="66px"
+          src="/assets/female-d47f0fb2f4537d3dda1eeff00c5ffe12a7f6996076cbc6eb486b6566f0419cb4.png" /></div>
+      <div class="bold mt30">
+        <p>EXECUTIVE TEAM INCLUDES WOMEN</p>
+      </div>
+    </div><svg class="polygon-header" viewBox="0 0 1440 90">
+      <polygon fill="#17808a" points="1326,90 0,90 0,0" style="opacity:0.5;"></polygon>
+      <polygon fill="#17808a" points="540,90 1440,90 1440,0" style="opacity:0.5;"></polygon>
+      <polygon fill="#17808a" points="0,90 1440,90 0,47"></polygon>
+    </svg>
+    <div class="milestones">
+      <h3 class="font-bold text-center top_title">Milestone</h3>
+      <div class="milestone">
+        <div class="date">Oct 2019</div>
+        <div class="line_and_content">
+          <div class="dot start"></div>
+          <div class="content recognition">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Recognition Received<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter"><a
+                      href="https://millionlivesclub.org/directory-mlc?sort=updated_at" target="_blank">MLC Vanguard for
+                      &#39;Access to Affordable Eyewear, Everywhere&#39;</a></div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc org"><span class="name">ORGANIZATIONS</span><span><a href="/organizations/dalberg"
+                        class="blk name_wrap_tag">Dalberg</a>, <a
+                        href="/organizations/australian-department-of-foreign-affairs-and-trade"
+                        class="blk name_wrap_tag">Australian Department of Foreign Affairs and Trade</a>, <a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a><span class=" "> and 10 more </span><a
+                        class="see-more">SEE ALL</a></span><span class="hide"><a href="/organizations/dalberg"
+                        class="blk name_wrap_tag">Dalberg</a>, <a
+                        href="/organizations/australian-department-of-foreign-affairs-and-trade"
+                        class="blk name_wrap_tag">Australian Department of Foreign Affairs and Trade</a>, <a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a>, <a href="/organizations/global-affairs-canada"
+                        class="blk name_wrap_tag">Global Affairs Canada</a>, <a
+                        href="/organizations/gesellschaft-fur-internationale-zusammenarbeit"
+                        class="blk name_wrap_tag">Gesellschaft für Internationale Zusammenarbeit</a>, <a
+                        href="/organizations/bayer-foundation" class="blk name_wrap_tag">Bayer Foundation</a>, <a
+                        href="/organizations/global-innovation-fund" class="blk name_wrap_tag">Global Innovation
+                        Fund</a>, <a href="/organizations/united-nations-children-s-fund"
+                        class="blk name_wrap_tag">United Nations Children's Fund</a>, <a
+                        href="/organizations/fourth-sector-group" class="blk name_wrap_tag">Fourth Sector Group</a>, <a
+                        href="/organizations/grand-challenges-canada" class="blk name_wrap_tag">Grand Challenges
+                        Canada</a>, <a href="/organizations/united-nations-development-programme"
+                        class="blk name_wrap_tag">United Nations Development Programme</a>, <a
+                        href="/organizations/results-for-development" class="blk name_wrap_tag">Results for
+                        Development</a> and <a href="/organizations/department-for-international-development"
+                        class="blk name_wrap_tag">Department for International Development</a><a class="see-less"> SEE
+                        LESS</a></span>&nbsp;<div class="inline font-reg">as part of</div>&nbsp;<span><a
+                        href="/programs/million-lives-club" class="blk name_wrap_tag">Million Lives Club</a></span><span
+                      class="hide"><a href="/programs/million-lives-club" class="blk name_wrap_tag">Million Lives
+                        Club</a></span></div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1583408404-faa3a600410301383cc70e6489633e00/MLC-HZ-MULTI-VANGUARD-orientation-null.jpg?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="date">Aug 2019</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content funding_raised">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Funds Raised<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">$500,000</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc"><span class="name">TITLE</span>The Clear Vision Workplace Alliance, and PROSPER II
+                    and III Randomized Controlled Trials</div>
+                  <div class="desc"><span class="name">TYPE</span>Grant</div>
+                  <div class="desc"><span class="name">FOCUS AREAS</span>
+                    <div class="inline">Economic Growth and Trade</div>
+                  </div>
+                  <div class="desc"><span class="name">Implemented In</span><span>India<span> and </span>Vietnam</span>
+                  </div>
+                  <div class="desc org"><span class="name">ORGANIZATION</span><span><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a></span><span class="hide"><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a></span>&nbsp;<div class="inline font-reg">as part of
+                    </div>&nbsp;<span><a href="/programs/development-innovation-ventures-div"
+                        class="blk name_wrap_tag">Development Innovation Ventures (DIV)</a>, <a
+                        href="/programs/u-s-global-development-lab" class="blk name_wrap_tag">U.S. Global Development
+                        Lab</a></span><span class="hide"><a href="/programs/development-innovation-ventures-div"
+                        class="blk name_wrap_tag">Development Innovation Ventures (DIV)</a>, <a
+                        href="/programs/u-s-global-development-lab" class="blk name_wrap_tag">U.S. Global Development
+                        Lab</a></span></div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/organizations/1"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1520304812-7b304a1003170136182f0e6489633e00/Horizontal-RGB-294.png?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="date">Jul 2019</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content lives_impacted">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Lives Impacted</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">6,000,000</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone expandable_bar">
+        <div class="date"></div>
+        <div class="line_and_content">
+          <div class="content"><a class="font-bold" href="javascript:void(0)" id="expand_milestones_btn">EXPAND</a>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Sep 2017</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content recognition">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Recognition Received<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Featured Innovator</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc org"><span class="name">ORGANIZATION</span><span><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a></span><span class="hide"><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a></span>&nbsp;<div class="inline font-reg">as part of
+                    </div>&nbsp;<span><a href="/programs/global-innovation-week-2017" class="blk name_wrap_tag">Global
+                        Innovation Week 2017</a></span><span class="hide"><a
+                        href="/programs/global-innovation-week-2017" class="blk name_wrap_tag">Global Innovation Week
+                        2017</a></span></div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/programs/141"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/old/GIW_FinalLogos_R5-02.jpg?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Jan 2017</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content funding_raised">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Funds Raised<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">$225,000</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc"><span class="name">TITLE</span>Meeting the Vision Needs of a Nation</div>
+                  <div class="desc"><span class="name">TYPE</span>Grant</div>
+                  <div class="desc"><span class="name">FOCUS AREAS</span>
+                    <div class="inline">Non-communicable Diseases</div>
+                  </div>
+                  <div class="desc"><span class="name">Implemented In</span><span>India</span></div>
+                  <div class="desc org"><span class="name">ORGANIZATION</span><span><a
+                        href="/organizations/grand-challenges-canada" class="blk name_wrap_tag">Grand Challenges
+                        Canada</a></span><span class="hide"><a href="/organizations/grand-challenges-canada"
+                        class="blk name_wrap_tag">Grand Challenges Canada</a></span>&nbsp;<div class="inline font-reg">
+                      as part of</div>&nbsp;<span><a href="/programs/transition-to-scale"
+                        class="blk name_wrap_tag">Transition to Scale</a></span><span class="hide"><a
+                        href="/programs/transition-to-scale" class="blk name_wrap_tag">Transition to Scale</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/organizations/13"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1538448712-0a425b30a81c013648ba0e6489633e00/Grand-Challenges-Canada-CAFIID-Logo.png?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Apr 2014</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content funding_raised">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Funds Raised<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">$2,560,730</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc org"><span class="name">ORGANIZATIONS</span><span><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a>, <a href="/organizations/the-skoll-foundation"
+                        class="blk name_wrap_tag">The Skoll Foundation</a>, <a href="/organizations/mercy-corps"
+                        class="blk name_wrap_tag">Mercy Corps</a></span><span class="hide"><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a>, <a href="/organizations/the-skoll-foundation"
+                        class="blk name_wrap_tag">The Skoll Foundation</a>, <a href="/organizations/mercy-corps"
+                        class="blk name_wrap_tag">Mercy Corps</a></span>&nbsp;<div class="inline font-reg">as part of
+                    </div>&nbsp;<span><a href="/programs/skoll-usaid-innovation-investment-alliance"
+                        class="blk name_wrap_tag">Skoll-USAID Innovation Investment Alliance</a></span><span
+                      class="hide"><a href="/programs/skoll-usaid-innovation-investment-alliance"
+                        class="blk name_wrap_tag">Skoll-USAID Innovation Investment Alliance</a></span></div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/organizations/1"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1520304812-7b304a1003170136182f0e6489633e00/Horizontal-RGB-294.png?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Jan 2014</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content funding_raised">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Funds Raised<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">$150,000</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc"><span class="name">TITLE</span>Meeting the Vision Needs of a Nation</div>
+                  <div class="desc"><span class="name">FOCUS AREAS</span>
+                    <div class="inline">Non-communicable Diseases</div>
+                  </div>
+                  <div class="desc"><span class="name">Implemented In</span><span>India</span></div>
+                  <div class="desc org"><span class="name">ORGANIZATION</span><span><a
+                        href="/organizations/grand-challenges-canada" class="blk name_wrap_tag">Grand Challenges
+                        Canada</a></span><span class="hide"><a href="/organizations/grand-challenges-canada"
+                        class="blk name_wrap_tag">Grand Challenges Canada</a></span>&nbsp;<div class="inline font-reg">
+                      as part of</div>&nbsp;<span><a href="/programs/transition-to-scale"
+                        class="blk name_wrap_tag">Transition to Scale</a></span><span class="hide"><a
+                        href="/programs/transition-to-scale" class="blk name_wrap_tag">Transition to Scale</a></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/organizations/13"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1538448712-0a425b30a81c013648ba0e6489633e00/Grand-Challenges-Canada-CAFIID-Logo.png?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Aug 2012</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content funding_raised">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Funds Raised<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">$585,350</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc"><span class="name">TITLE</span>Scaling BoPtical Care Hub Model in India</div>
+                  <div class="desc funding"><span class="name">FUNDING</span><a class="blk"
+                      href="/funding/development-innovation-ventures-div">Development Innovation Ventures (DIV)</a>
+                  </div>
+                  <div class="desc org"><span class="name">ORGANIZATION</span><span><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a></span><span class="hide"><a
+                        href="/organizations/u-s-agency-for-international-development" class="blk name_wrap_tag">U.S.
+                        Agency for International Development</a></span>&nbsp;<div class="inline font-reg">as part of
+                    </div>&nbsp;<span><a href="/programs/development-innovation-ventures-div"
+                        class="blk name_wrap_tag">Development Innovation Ventures (DIV)</a>, <a
+                        href="/programs/u-s-global-development-lab" class="blk name_wrap_tag">U.S. Global Development
+                        Lab</a></span><span class="hide"><a href="/programs/development-innovation-ventures-div"
+                        class="blk name_wrap_tag">Development Innovation Ventures (DIV)</a>, <a
+                        href="/programs/u-s-global-development-lab" class="blk name_wrap_tag">U.S. Global Development
+                        Lab</a></span></div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/organizations/1"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1520304812-7b304a1003170136182f0e6489633e00/Horizontal-RGB-294.png?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Jan 2012</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content recognition">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Recognition Received<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">2012 Innovator Cohort</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc org"><span class="name">ORGANIZATION</span><span><a
+                        href="/organizations/duke-university" class="blk name_wrap_tag">Duke University</a></span><span
+                      class="hide"><a href="/organizations/duke-university" class="blk name_wrap_tag">Duke
+                        University</a></span>&nbsp;<div class="inline font-reg">as part of</div>&nbsp;<span><a
+                        href="/programs/innovations-in-healthcare" class="blk name_wrap_tag">Innovations in
+                        Healthcare</a>, <a href="/programs/duke-global-health-innovation-center"
+                        class="blk name_wrap_tag">Duke Global Health Innovation Center</a></span><span class="hide"><a
+                        href="/programs/innovations-in-healthcare" class="blk name_wrap_tag">Innovations in
+                        Healthcare</a>, <a href="/programs/duke-global-health-innovation-center"
+                        class="blk name_wrap_tag">Duke Global Health Innovation Center</a></span></div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/programs/527"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1552510856-04fd3a102801013712450e6489633e00/Global-Health-Innovation-Center-logo-FINAL.png?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content launched">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Created</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/new/uploads/1571678551-4968a810d6550137154c0e6489633e00/110808-warbyparker-386-orientation-undefined.jpg?size=max300" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Zambia</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Vanuatu</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Bangladesh</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">India</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Sierra Leone</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Venezuela</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Burkina Faso</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Sri Lanka</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Mexico</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Cameroon</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Morocco</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Mozambique</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Tanzania</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Belize</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Nigeria</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Uganda</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Kenya</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Honduras</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Malawi</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Congo, Democratic Republic of the</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Ghana</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">South Africa</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Indonesia</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">El Salvador</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Senegal</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Paraguay</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content recognition">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">Recognition Received<span class="icon-star-check"></span><span
+                      class="verified-text font-bold">VERIFIED</span></div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Profiled Innovation - Bronze</div>
+                </div>
+                <div class="milestone_org_prog_box">
+                  <div class="desc org"><span class="name">ORGANIZATION</span><span><a
+                        href="/organizations/results-for-development" class="blk name_wrap_tag">Results for
+                        Development</a></span><span class="hide"><a href="/organizations/results-for-development"
+                        class="blk name_wrap_tag">Results for Development</a></span>&nbsp;<div class="inline font-reg">
+                      as part of</div>&nbsp;<span><a href="/programs/center-for-health-market-innovations"
+                        class="blk name_wrap_tag">Center for Health Market Innovations</a></span><span class="hide"><a
+                        href="/programs/center-for-health-market-innovations" class="blk name_wrap_tag">Center for
+                        Health Market Innovations</a></span></div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="/programs/227"><img class="logo"
+                    src="https://go.globalinnovationexchange.org/s3_objs/old/CHMI.png?size=max300" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Nepal</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">South Sudan</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Benin</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Bolivia</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Cambodia</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Ecuador</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Dominican Republic</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Costa Rica</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone" style="display: none;">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Haiti</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Mali</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Nicaragua</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="date">Date Unknown</div>
+        <div class="line_and_content">
+          <div class="dot"></div>
+          <div class="last_dot_fix"></div>
+          <div class="content new_country">
+            <div class="arrow"></div>
+            <div class="row">
+              <div class="col-sm-8" id="milestones_title">
+                <div class="mtype_box">
+                  <div class="mtype">New Country Implemented In</div>
+                </div>
+                <div class="title_box">
+                  <div class="title font-fold vcenter">Rwanda</div>
+                </div>
+              </div>
+              <div class="col-sm-4 text-right vcenter"><a href="javascript:;"><img class="logo" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><svg class="polygon-footer" viewBox="0 0 1440 90">
+      <polygon fill="#17808a" points="0,0 1440,0 720,90"></polygon>
+      <polygon fill="#17808a" points="0,0 720,90 0,90" style="opacity:0.5;"></polygon>
+      <polygon fill="#17808a" points="720,90 1440,0 1440,90" style="opacity:0.5;"></polygon>
+    </svg>
+    <div aria-labelledby="myModalLabel" class="modal fade" id="messageModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog message-modal" role="document">
+        <div class="modal-content">
+          <div class="modal-header"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                aria-hidden="true">&times;</span></button>
+            <h3 class="modal-title">Please login or sign up to send a message to Kristen Shaw</h3>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <form class="new_user" id="signup" data-validate="true" action="/users/sign_in" accept-charset="UTF-8"
+                method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden"
+                  name="authenticity_token"
+                  value="OR0Uxsq+qfedRZu8XMwUTZ2QBHrQY6gmkdF0r0IumSZPavdbyKHgtCDv1aUNxukiqIZxyxQUes/f3spWsMmn6g==" />
+                <div class="form-group"><input class="form-control" placeholder="Email" required="required"
+                    autocomplete="off" data-validate-presence="true" type="email" value="" name="user[email]"
+                    id="user_email" /></div>
+                <div class="form-group"><input class="form-control" placeholder="Password" required="required"
+                    autocomplete="off" data-validate-presence="true" type="password" name="user[password]"
+                    id="user_password" /></div>
+                <div class="form-group forget-password modal-links"><a href="/users/password/new">FORGET PASSWORD?</a>
+                </div>
+                <div class="form-group"><input type="submit" name="commit" value="LOG IN" class="btn next-btn"
+                    data-disable-with="LOG IN" /></div>
+              </form>
+              <div class="divider"><span>OR</span></div>
+              <div class="share-bars"><a class="facebook" href="/users/auth/facebook"><i
+                    class="icon-facebook"></i><span>LOGIN WITH facebook</span></a><a class="twitter"
+                  href="/users/auth/twitter"><i class="icon-twitter"></i><span>LOGIN WITH twitter</span></a></div>
+            </div>
+            <div class="modal-links">DON’T HAVE AN ACCOUNT YET?&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>$(document).ready(function () {
+        $('.bxslider').bxSlider({
+          minSlides: 1,
+          maxSlides: 3,
+          pager: false,
+          slideWidth: 81,
+          slideMargin: 10,
+          infiniteLoop: false,
+          touchEnabled: false,
+          hideControlOnEnd: true,
+          preventDefaultSwipeX: false
+        });
+      });</script>
+    <div class="push"></div>
+  </div>
+  <div class="page_footer">
+    <div class="contact_box">
+      <div class="block"><small>Browse</small><a href="/browse/funding">Funding</a><a
+          href="/browse/innovation">Innovations</a><a href="/browse/funders">Funders</a></div>
+      <div class="block"><small>PARTNER WITH US</small><a
+          href="https://www.globalinnovationexchange.org/global-development-innovation-data">Data on GIE</a><a
+          href="https://www.globalinnovationexchange.org/our-data-champions">Our Data Partners</a><a
+          href="https://giecustom.globalinnovationexchange.org/">GIE Custom</a></div>
+      <div class="block"><small>Global Innovation Exchange</small><a
+          href="https://www.globalinnovationexchange.org/about">About</a><a
+          href="https://www.globalinnovationexchange.org/global-innovation-exchange-news-and-announcements">News &amp;
+          Blogs</a><a target="_blank" href="/terms_of_use">Terms of Use</a><a target="_blank"
+          href="/privacy_policy">Privacy Policy</a><a
+          href="mailto:admin@globalinnovationexchange.org?body=Contact%20Us:%20go.globalinnovationexchange.org">Contact</a>
+      </div>
+      <div class="block"><small>Newsletter</small>Stay in the loop about new features, updates and more.<div
+          class="signup-block"><a class="btn btn-green register-btn"
+            href="/users/sign_up?from=subscription">Register</a></div>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.googletagmanager.com/gtag/js?id=UA-62347470-2" data-turbolinks-track="reload"
+    async="async"></script>
+  <script>window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', "UA-62347470-2");</script>
+  <script>window.feature_flags = ["feature_track_current_microsite_info", "feature_2031_collect_sign_in_up", "social_media_meta_2215", "feature_2229_hardcode_innos", "feature_anonymous_publish_2207", "share_resource_2316", "feature_admin_users_page", "feature_2156_custom_filter", "dashboard_1984", "custom_metadata_2248", "portfolio_tracking_2419", "2783_disabled_write"]
+    console.log(`Enable features: ${window.feature_flags}`)</script>
+  <script>window.translationDict = { "shared.select_all": "SELECT ALL", "shared.deselect_all": "DESELECT ALL", "models.resources.type_cds.blog": "blog", "models.resources.type_cds.attachment": "Attachment", "resources.edit.blog_content": "Blog Content", "resources.edit.short_description": "Short Description", "shared.see_more": "SEE MORE", "shared.see_all": "SEE ALL", "shared.see_less": "SEE LESS" }
+
+    window.t = function (key) {
+      let value = window.translationDict[key] || key
+      return value
+    }</script>
+</body>
+
+</html>
